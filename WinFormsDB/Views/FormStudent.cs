@@ -20,17 +20,25 @@ namespace WinFormsDB.Views
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e, FormAcademy academy,Group group)
         {
             Student student = new Student();
             student.FirstName= txtFirstName.Text;
             student.LastName = txtLastName.Text;
             student.Email = txtEmail.Text;
+            if (academy.listBoxGroup.SelectedItem.ToString() == group.Name)
+                group.Students.Add(student);
+           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

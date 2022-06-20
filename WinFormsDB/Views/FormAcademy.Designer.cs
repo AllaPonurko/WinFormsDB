@@ -33,6 +33,10 @@ namespace WinFormsDB
             this.listBoxGroup = new System.Windows.Forms.ListBox();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.txtNameGroup = new System.Windows.Forms.TextBox();
+            this.labelNameGroup = new System.Windows.Forms.Label();
+            this.btnSaveGroup = new System.Windows.Forms.Button();
+            this.labelListGroups = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddStudent
@@ -75,12 +79,54 @@ namespace WinFormsDB
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtNameGroup
+            // 
+            this.txtNameGroup.Enabled = false;
+            this.txtNameGroup.Location = new System.Drawing.Point(312, 72);
+            this.txtNameGroup.Name = "txtNameGroup";
+            this.txtNameGroup.Size = new System.Drawing.Size(152, 23);
+            this.txtNameGroup.TabIndex = 4;
+            this.txtNameGroup.TextChanged += new System.EventHandler(this.txtNameGroup_TextChanged);
+            // 
+            // labelNameGroup
+            // 
+            this.labelNameGroup.AutoSize = true;
+            this.labelNameGroup.Location = new System.Drawing.Point(312, 34);
+            this.labelNameGroup.Name = "labelNameGroup";
+            this.labelNameGroup.Size = new System.Drawing.Size(75, 15);
+            this.labelNameGroup.TabIndex = 5;
+            this.labelNameGroup.Text = "Name Group";
+            // 
+            // btnSaveGroup
+            // 
+            this.btnSaveGroup.Location = new System.Drawing.Point(312, 121);
+            this.btnSaveGroup.Name = "btnSaveGroup";
+            this.btnSaveGroup.Size = new System.Drawing.Size(152, 23);
+            this.btnSaveGroup.TabIndex = 6;
+            this.btnSaveGroup.Text = "Save Group";
+            this.btnSaveGroup.UseVisualStyleBackColor = true;
+            this.btnSaveGroup.Click += new System.EventHandler(this.btnSaveGroup_Click);
+            // 
+            // labelListGroups
+            // 
+            this.labelListGroups.AutoSize = true;
+            this.labelListGroups.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.labelListGroups.Location = new System.Drawing.Point(47, 16);
+            this.labelListGroups.Name = "labelListGroups";
+            this.labelListGroups.Size = new System.Drawing.Size(66, 15);
+            this.labelListGroups.TabIndex = 7;
+            this.labelListGroups.Text = "List Groups";
+            // 
             // FormAcademy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAddStudent;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelListGroups);
+            this.Controls.Add(this.btnSaveGroup);
+            this.Controls.Add(this.labelNameGroup);
+            this.Controls.Add(this.txtNameGroup);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAddGroup);
             this.Controls.Add(this.listBoxGroup);
@@ -89,6 +135,7 @@ namespace WinFormsDB
             this.Text = "Welcome to Academy";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,6 +145,10 @@ namespace WinFormsDB
         public System.Windows.Forms.ListBox listBoxGroup;
         private System.Windows.Forms.Button btnAddGroup;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtNameGroup;
+        private System.Windows.Forms.Label labelNameGroup;
+        private System.Windows.Forms.Button btnSaveGroup;
+        private System.Windows.Forms.Label labelListGroups;
     }
 }
 
