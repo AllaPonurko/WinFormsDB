@@ -56,7 +56,7 @@ namespace WinFormsDB
             DbContextAplication.DbContextAcademy academy = new DbContextAplication.DbContextAcademy();
 
             if (txtNameGroup.Text.Length != 0)
-            { 
+            {
                 listBoxGroup.Items.Add(txtNameGroup.Text);
                 Group group = new Group();
                 group.Name = txtNameGroup.Text;
