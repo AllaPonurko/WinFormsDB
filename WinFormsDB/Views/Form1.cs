@@ -17,12 +17,7 @@ namespace WinFormsDB
         {
             InitializeComponent();
         }
-        public FormAcademy(FormGroup formGroup)
-        {
-            InitializeComponent();
-            formGroup = new FormGroup();
-            listBoxGroup.Items.Add(formGroup.ToString());
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,6 +34,7 @@ namespace WinFormsDB
         {
             FormGroup formGroup = new FormGroup();
             formGroup.Show();
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)

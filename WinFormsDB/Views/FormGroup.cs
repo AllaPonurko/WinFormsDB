@@ -16,7 +16,11 @@ namespace WinFormsDB.Views
         {
             InitializeComponent();
         }
-        
+        //public FormGroup(FormAcademy academy)
+        //{
+        //    InitializeComponent();
+            
+        //}
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -29,9 +33,13 @@ namespace WinFormsDB.Views
             group.Name = txtName.Text;
             DbContextAcademy contextAcademy = new DbContextAcademy();
             contextAcademy.Groups.Add(group);
-            academy.listBoxGroup.Items.Add(group.ToString());
-            academy.Show();
-            this.Close();
+            academy.listBoxGroup.Items.Add(group.Name);
+            
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

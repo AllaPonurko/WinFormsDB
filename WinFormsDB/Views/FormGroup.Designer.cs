@@ -59,6 +59,7 @@ namespace WinFormsDB.Views
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 23);
             this.txtName.TabIndex = 2;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnCancel
             // 
