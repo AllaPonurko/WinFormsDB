@@ -37,6 +37,7 @@ namespace WinFormsDB
             this.labelNameGroup = new System.Windows.Forms.Label();
             this.btnSaveGroup = new System.Windows.Forms.Button();
             this.labelListGroups = new System.Windows.Forms.Label();
+            this.btnDeleteGroup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddStudent
@@ -117,12 +118,23 @@ namespace WinFormsDB
             this.labelListGroups.TabIndex = 7;
             this.labelListGroups.Text = "List Groups";
             // 
+            // btnDeleteGroup
+            // 
+            this.btnDeleteGroup.Location = new System.Drawing.Point(47, 290);
+            this.btnDeleteGroup.Name = "btnDeleteGroup";
+            this.btnDeleteGroup.Size = new System.Drawing.Size(120, 23);
+            this.btnDeleteGroup.TabIndex = 8;
+            this.btnDeleteGroup.Text = "Delete Group";
+            this.btnDeleteGroup.UseVisualStyleBackColor = true;
+            this.btnDeleteGroup.Click += new System.EventHandler(this.btnDeleteGroup_Click);
+            // 
             // FormAcademy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAddStudent;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteGroup);
             this.Controls.Add(this.labelListGroups);
             this.Controls.Add(this.btnSaveGroup);
             this.Controls.Add(this.labelNameGroup);
@@ -149,6 +161,7 @@ namespace WinFormsDB
         private System.Windows.Forms.Label labelNameGroup;
         private System.Windows.Forms.Button btnSaveGroup;
         private System.Windows.Forms.Label labelListGroups;
+        private System.Windows.Forms.Button btnDeleteGroup;
     }
 }
 

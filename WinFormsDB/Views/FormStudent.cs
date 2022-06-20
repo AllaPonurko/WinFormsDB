@@ -11,23 +11,24 @@ namespace WinFormsDB.Views
 {
     public partial class FormStudent : Form
     {
-        public FormStudent()
-        {
-            InitializeComponent();
-        }
+        //public FormStudent()
+        //{
+        //    InitializeComponent();
+        //}
         public FormStudent(FormAcademy academy)
         {
             InitializeComponent();
+            labelGroup.Text = academy.listBoxGroup.SelectedItem.ToString();
         }
 
-        private void btnSave_Click(object sender, EventArgs e, FormAcademy academy,Group group)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             Student student = new Student();
             student.FirstName= txtFirstName.Text;
             student.LastName = txtLastName.Text;
             student.Email = txtEmail.Text;
-            if (academy.listBoxGroup.SelectedItem.ToString() == group.Name)
-                group.Students.Add(student);
+            if(txtFirstName.Text!=null&& txtLastName.Text!=null)
+            listBoxStudents.Items.Add(student.ToString());
            
         }
 
@@ -36,9 +37,6 @@ namespace WinFormsDB.Views
             Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

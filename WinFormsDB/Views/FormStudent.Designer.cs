@@ -37,6 +37,9 @@ namespace WinFormsDB.Views
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.listBoxStudents = new System.Windows.Forms.ListBox();
+            this.labelListStudents = new System.Windows.Forms.Label();
+            this.labelGroup = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -107,11 +110,40 @@ namespace WinFormsDB.Views
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // listBoxStudents
+            // 
+            this.listBoxStudents.FormattingEnabled = true;
+            this.listBoxStudents.ItemHeight = 15;
+            this.listBoxStudents.Location = new System.Drawing.Point(568, 68);
+            this.listBoxStudents.Name = "listBoxStudents";
+            this.listBoxStudents.Size = new System.Drawing.Size(120, 199);
+            this.listBoxStudents.TabIndex = 8;
+            // 
+            // labelListStudents
+            // 
+            this.labelListStudents.AutoSize = true;
+            this.labelListStudents.Location = new System.Drawing.Point(568, 25);
+            this.labelListStudents.Name = "labelListStudents";
+            this.labelListStudents.Size = new System.Drawing.Size(74, 15);
+            this.labelListStudents.TabIndex = 9;
+            this.labelListStudents.Text = "List Students";
+            // 
+            // labelGroup
+            // 
+            this.labelGroup.AutoSize = true;
+            this.labelGroup.Location = new System.Drawing.Point(568, 47);
+            this.labelGroup.Name = "labelGroup";
+            this.labelGroup.Size = new System.Drawing.Size(0, 15);
+            this.labelGroup.TabIndex = 10;
+            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelGroup);
+            this.Controls.Add(this.labelListStudents);
+            this.Controls.Add(this.listBoxStudents);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtEmail);
@@ -137,5 +169,8 @@ namespace WinFormsDB.Views
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ListBox listBoxStudents;
+        private System.Windows.Forms.Label labelListStudents;
+        private System.Windows.Forms.Label labelGroup;
     }
 }

@@ -17,8 +17,9 @@ namespace WinFormsDB
         public FormAcademy()
         {
             InitializeComponent();
+            
         }
-        
+        public DbContextAplication.DbContextAcademy academy = new DbContextAplication.DbContextAcademy();
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -27,7 +28,7 @@ namespace WinFormsDB
         private void btnAddStudent_Click(object sender, EventArgs e)
         {if (listBoxGroup.SelectedItem != null)
             {
-                FormStudent student = new FormStudent();
+                FormStudent student = new FormStudent(this);
                 student.Show();
             }
             
@@ -53,7 +54,7 @@ namespace WinFormsDB
 
         private void btnSaveGroup_Click(object sender, EventArgs e)
         {
-            DbContextAplication.DbContextAcademy academy = new DbContextAplication.DbContextAcademy();
+           
 
             if (txtNameGroup.Text.Length != 0)
             {
@@ -61,9 +62,15 @@ namespace WinFormsDB
                 Group group = new Group();
                 group.Name = txtNameGroup.Text;
                 academy.Groups.Add(group);
+
             }
             else MessageBox.Show("Enter name");
            
+        }
+
+        private void btnDeleteGroup_Click(object sender, EventArgs e)
+        {
+            listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
         }
     }
 }
