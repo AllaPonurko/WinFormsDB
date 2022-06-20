@@ -9,7 +9,7 @@ namespace WinFormsDB.DbContextAplication
     public class DbContextAcademy:DbContext
     {
         public List<Group> Groups { get; set; }
-        public DbSet<Student> students { get; set; }=null!;
+        public DbSet<Student> students { get; set; } = null!;
         //public DbContextAcademy() => Database.EnsureCreated();
         public DbContextAcademy()
         {
