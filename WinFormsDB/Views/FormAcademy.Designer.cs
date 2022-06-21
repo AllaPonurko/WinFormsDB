@@ -111,7 +111,7 @@ namespace WinFormsDB
             // labelListGroups
             // 
             this.labelListGroups.AutoSize = true;
-            this.labelListGroups.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.labelListGroups.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.labelListGroups.Location = new System.Drawing.Point(47, 16);
             this.labelListGroups.Name = "labelListGroups";
             this.labelListGroups.Size = new System.Drawing.Size(66, 15);

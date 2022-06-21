@@ -17,22 +17,29 @@ namespace WinFormsDB
         public FormAcademy()
         {
             InitializeComponent();
-            
+            academy = new DbContextAplication.DbContextAcademy()
         }
-        public DbContextAplication.DbContextAcademy academy = new DbContextAplication.DbContextAcademy();
+        public DbContextAplication.DbContextAcademy academy;
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
-        {if (listBoxGroup.SelectedItem != null)
+        {try
             {
-                FormStudent student = new FormStudent(this);
-                student.Show();
+                if (listBoxGroup.SelectedItem != null)
+                {
+                    FormStudent student = new FormStudent(this);
+                    student.Show();
+                }
+
+                else MessageBox.Show("No group selected");
             }
-            
-            else MessageBox.Show("No group selected");
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -77,6 +84,7 @@ namespace WinFormsDB
                 {
                     listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
                     academy.Groups.Remove(item);
+                    academy.SaveChanges();
                 }
                 else MessageBox.Show("Group has students. It's can't delete");
             }
