@@ -62,7 +62,7 @@ namespace WinFormsDB
                 Group group = new Group();
                 group.Name = txtNameGroup.Text;
                 academy.Groups.Add(group);
-
+                academy.SaveChanges();
             }
             else MessageBox.Show("Enter name");
            
@@ -72,9 +72,13 @@ namespace WinFormsDB
         {
             foreach (var item in academy.Groups)
             {
-                if (listBoxGroup.SelectedItem.ToString() == item.ToString() && item.Students.Count==0)
+                if (item.Name==listBoxGroup.SelectedItem.ToString() 
+                    && item.Students.Count == 0)
+                {
                     listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
-                else MessageBox.Show("Group has students. It`s can`t delete");
+                    academy.Groups.Remove(item);
+                }
+                else MessageBox.Show("Group has students. It's can't delete");
             }
         }
     }
