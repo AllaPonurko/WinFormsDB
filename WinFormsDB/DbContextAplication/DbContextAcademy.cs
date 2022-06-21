@@ -16,14 +16,14 @@ namespace WinFormsDB.DbContextAplication
         public List<Group> Groups { get; set; }
         public DbSet<Student> students { get; set; } 
         public DbSet<Group> groups { get; set; }
-        
-        private string sqlConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Repos\Source\WinFormsDB\WinFormsDB\DB\DbAcademy.mdf;Integrated Security=True";
+
+        private string sqlConnectionString = @"Server=(localdb)\mssqllocaldb;Database=DbAcademy;Trusted_Connection=True;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlite(sqlConnectionString);
+            optionsBuilder.UseSqlServer(sqlConnectionString);
                 // .UseLazyLoadingProxies()
                 
         }

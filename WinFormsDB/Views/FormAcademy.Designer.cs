@@ -38,6 +38,10 @@ namespace WinFormsDB
             this.btnSaveGroup = new System.Windows.Forms.Button();
             this.labelListGroups = new System.Windows.Forms.Label();
             this.btnDeleteGroup = new System.Windows.Forms.Button();
+            this.listBoxStudents = new System.Windows.Forms.ListBox();
+            this.labelStudentsInGroup = new System.Windows.Forms.Label();
+            this.NameSelectedGroup = new System.Windows.Forms.Label();
+            this.SelectedGroup = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddStudent
@@ -83,7 +87,7 @@ namespace WinFormsDB
             // txtNameGroup
             // 
             this.txtNameGroup.Enabled = false;
-            this.txtNameGroup.Location = new System.Drawing.Point(312, 72);
+            this.txtNameGroup.Location = new System.Drawing.Point(219, 68);
             this.txtNameGroup.Name = "txtNameGroup";
             this.txtNameGroup.Size = new System.Drawing.Size(152, 23);
             this.txtNameGroup.TabIndex = 4;
@@ -92,7 +96,7 @@ namespace WinFormsDB
             // labelNameGroup
             // 
             this.labelNameGroup.AutoSize = true;
-            this.labelNameGroup.Location = new System.Drawing.Point(312, 34);
+            this.labelNameGroup.Location = new System.Drawing.Point(219, 34);
             this.labelNameGroup.Name = "labelNameGroup";
             this.labelNameGroup.Size = new System.Drawing.Size(75, 15);
             this.labelNameGroup.TabIndex = 5;
@@ -100,7 +104,7 @@ namespace WinFormsDB
             // 
             // btnSaveGroup
             // 
-            this.btnSaveGroup.Location = new System.Drawing.Point(312, 121);
+            this.btnSaveGroup.Location = new System.Drawing.Point(219, 116);
             this.btnSaveGroup.Name = "btnSaveGroup";
             this.btnSaveGroup.Size = new System.Drawing.Size(152, 23);
             this.btnSaveGroup.TabIndex = 6;
@@ -128,12 +132,50 @@ namespace WinFormsDB
             this.btnDeleteGroup.UseVisualStyleBackColor = true;
             this.btnDeleteGroup.Click += new System.EventHandler(this.btnDeleteGroup_Click);
             // 
+            // listBoxStudents
+            // 
+            this.listBoxStudents.FormattingEnabled = true;
+            this.listBoxStudents.ItemHeight = 15;
+            this.listBoxStudents.Location = new System.Drawing.Point(541, 34);
+            this.listBoxStudents.Name = "listBoxStudents";
+            this.listBoxStudents.Size = new System.Drawing.Size(120, 184);
+            this.listBoxStudents.TabIndex = 9;
+            // 
+            // labelStudentsInGroup
+            // 
+            this.labelStudentsInGroup.AutoSize = true;
+            this.labelStudentsInGroup.Location = new System.Drawing.Point(541, 16);
+            this.labelStudentsInGroup.Name = "labelStudentsInGroup";
+            this.labelStudentsInGroup.Size = new System.Drawing.Size(102, 15);
+            this.labelStudentsInGroup.TabIndex = 10;
+            this.labelStudentsInGroup.Text = "Students in Group";
+            // 
+            // NameSelectedGroup
+            // 
+            this.NameSelectedGroup.AutoSize = true;
+            this.NameSelectedGroup.Location = new System.Drawing.Point(692, 16);
+            this.NameSelectedGroup.Name = "NameSelectedGroup";
+            this.NameSelectedGroup.Size = new System.Drawing.Size(0, 15);
+            this.NameSelectedGroup.TabIndex = 11;
+            // 
+            // SelectedGroup
+            // 
+            this.SelectedGroup.AutoSize = true;
+            this.SelectedGroup.Location = new System.Drawing.Point(653, 15);
+            this.SelectedGroup.Name = "SelectedGroup";
+            this.SelectedGroup.Size = new System.Drawing.Size(0, 15);
+            this.SelectedGroup.TabIndex = 12;
+            // 
             // FormAcademy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAddStudent;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SelectedGroup);
+            this.Controls.Add(this.NameSelectedGroup);
+            this.Controls.Add(this.labelStudentsInGroup);
+            this.Controls.Add(this.listBoxStudents);
             this.Controls.Add(this.btnDeleteGroup);
             this.Controls.Add(this.labelListGroups);
             this.Controls.Add(this.btnSaveGroup);
@@ -162,6 +204,10 @@ namespace WinFormsDB
         private System.Windows.Forms.Button btnSaveGroup;
         private System.Windows.Forms.Label labelListGroups;
         private System.Windows.Forms.Button btnDeleteGroup;
+        private System.Windows.Forms.ListBox listBoxStudents;
+        private System.Windows.Forms.Label labelStudentsInGroup;
+        private System.Windows.Forms.Label NameSelectedGroup;
+        private System.Windows.Forms.Label SelectedGroup;
     }
 }
 

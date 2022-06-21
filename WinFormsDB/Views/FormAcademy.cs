@@ -22,7 +22,10 @@ namespace WinFormsDB
         public DbContextAplication.DbContextAcademy academy;
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //if (academy.groups != null)
+            //    foreach (var item in academy.groups)
+            //        listBoxGroup.Items.Add(item.ToString());
+            //else MessageBox.Show("Group's list is empty");
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
