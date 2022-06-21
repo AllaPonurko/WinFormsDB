@@ -9,8 +9,8 @@ using WinFormsDB.DbContextAplication;
 namespace WinFormsDB.Migrations
 {
     [DbContext(typeof(DbContextAcademy))]
-    [Migration("20220621181856_Academy")]
-    partial class Academy
+    [Migration("20220621200430_academy")]
+    partial class academy
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

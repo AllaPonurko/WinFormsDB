@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WinFormsDB.Migrations
 {
-    public partial class Academy : Migration
+    public partial class academy : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

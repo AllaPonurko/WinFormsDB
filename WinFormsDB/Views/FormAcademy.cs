@@ -17,7 +17,7 @@ namespace WinFormsDB
         public FormAcademy()
         {
             InitializeComponent();
-            academy = new DbContextAplication.DbContextAcademy()
+            academy = new DbContextAplication.DbContextAcademy();
         }
         public DbContextAplication.DbContextAcademy academy;
         private void Form1_Load(object sender, EventArgs e)
@@ -69,6 +69,7 @@ namespace WinFormsDB
                 Group group = new Group();
                 group.Name = txtNameGroup.Text;
                 academy.Groups.Add(group);
+                academy.groups.Add(group);
                 academy.SaveChanges();
             }
             else MessageBox.Show("Enter name");
@@ -79,14 +80,22 @@ namespace WinFormsDB
         {
             foreach (var item in academy.Groups)
             {
-                if (item.Name==listBoxGroup.SelectedItem.ToString() 
-                    && item.Students.Count == 0)
+                try
                 {
+                    if (item.Name == listBoxGroup.SelectedItem.ToString()
+                        && item.Students.Count == 0)
+                    {
                     listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
                     academy.Groups.Remove(item);
+                    academy.groups.Remove(item);
                     academy.SaveChanges();
+                    }
+                    else MessageBox.Show("Group has students. It's can't delete");
                 }
-                else MessageBox.Show("Group has students. It's can't delete");
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
