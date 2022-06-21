@@ -39,6 +39,7 @@ namespace WinFormsDB
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
             txtNameGroup.Text = null;
+            txtNameGroup.BackColor = Color.White;
             txtNameGroup.Enabled = true;
         }
 
@@ -55,7 +56,6 @@ namespace WinFormsDB
         private void btnSaveGroup_Click(object sender, EventArgs e)
         {
            
-
             if (txtNameGroup.Text.Length != 0)
             {
                 listBoxGroup.Items.Add(txtNameGroup.Text);
@@ -70,7 +70,12 @@ namespace WinFormsDB
 
         private void btnDeleteGroup_Click(object sender, EventArgs e)
         {
-            listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
+            foreach (var item in academy.Groups)
+            {
+                if (listBoxGroup.SelectedItem.ToString() == item.ToString() && item.Students.Count==0)
+                    listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
+                else MessageBox.Show("Group has students. It`s can`t delete");
+            }
         }
     }
 }
