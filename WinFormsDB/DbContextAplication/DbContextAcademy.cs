@@ -12,6 +12,7 @@ namespace WinFormsDB.DbContextAplication
         public DbContextAcademy()
         {
             Groups = new List<Group>();
+            //Database.EnsureCreated();
         }
         public List<Group> Groups { get; set; }
         public DbSet<Student> students { get; set; } 

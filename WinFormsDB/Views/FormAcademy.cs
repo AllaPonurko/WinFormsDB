@@ -35,6 +35,7 @@ namespace WinFormsDB
                 {
                     FormStudent student = new FormStudent(this);
                     student.Show();
+                    student.Text = "New Student";
                 }
 
                 else MessageBox.Show("No group selected");
@@ -81,24 +82,27 @@ namespace WinFormsDB
 
         private void btnDeleteGroup_Click(object sender, EventArgs e)
         {
+            List<Group> GroupToDelete = new List<Group>();
             foreach (var item in academy.Groups)
             {
-                try
-                {
+                
                     if (item.Name == listBoxGroup.SelectedItem.ToString()
                         && item.Students.Count == 0)
                     {
-                    listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
-                    academy.Groups.Remove(item);
-                    academy.groups.Remove(item);
-                    academy.SaveChanges();
+                        GroupToDelete.Add(item);
+                        listBoxGroup.Items.Remove(listBoxGroup.SelectedItem);
+                        
+                        foreach(var item1 in GroupToDelete)
+                    {
+                        academy.Groups.Remove(item1);
+                        academy.Groups.Remove(item1);
+                        academy.groups.Remove(item1);
+                        academy.SaveChanges();
                     }
+                }
+                    
                     else MessageBox.Show("Group has students. It's can't delete");
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                
             }
         }
     }

@@ -24,12 +24,17 @@ namespace WinFormsDB.Views
             student.LastName = txtLastName.Text;
             student.Email = txtEmail.Text;
             academy.academy.students.Add(student);
+            foreach(var item in academy.academy.Groups)
+            {
+                if (item.Name == academy.listBoxGroup.SelectedItem.ToString())
+                    item.Students.Add(student);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             
-            if(txtFirstName.Text!=null&& txtLastName.Text!=null&&txtEmail.Text!=null)
+            if(txtFirstName.Text.Length!=0 && txtLastName.Text.Length!=0&&txtEmail.Text.Length!=0)
             listBoxStudents.Items.Add(txtFirstName.Text+" "+ txtLastName.Text);
           
         }
