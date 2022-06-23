@@ -48,7 +48,7 @@ namespace WinFormsDB.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("GroupId")
+                    b.Property<Guid?>("GroupId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LastName")
@@ -66,9 +66,7 @@ namespace WinFormsDB.Migrations
                 {
                     b.HasOne("WinFormsDB.Entities.Group", null)
                         .WithMany("Students")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId");
                 });
 
             modelBuilder.Entity("WinFormsDB.Entities.Group", b =>

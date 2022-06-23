@@ -42,6 +42,9 @@ namespace WinFormsDB
             this.labelStudentsInGroup = new System.Windows.Forms.Label();
             this.NameSelectedGroup = new System.Windows.Forms.Label();
             this.SelectedGroup = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDataStudent = new System.Windows.Forms.TextBox();
+            this.btnSaveStudentInGroup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddStudent
@@ -87,7 +90,7 @@ namespace WinFormsDB
             // txtNameGroup
             // 
             this.txtNameGroup.Enabled = false;
-            this.txtNameGroup.Location = new System.Drawing.Point(219, 68);
+            this.txtNameGroup.Location = new System.Drawing.Point(191, 63);
             this.txtNameGroup.Name = "txtNameGroup";
             this.txtNameGroup.Size = new System.Drawing.Size(152, 23);
             this.txtNameGroup.TabIndex = 4;
@@ -96,7 +99,7 @@ namespace WinFormsDB
             // labelNameGroup
             // 
             this.labelNameGroup.AutoSize = true;
-            this.labelNameGroup.Location = new System.Drawing.Point(219, 34);
+            this.labelNameGroup.Location = new System.Drawing.Point(191, 34);
             this.labelNameGroup.Name = "labelNameGroup";
             this.labelNameGroup.Size = new System.Drawing.Size(75, 15);
             this.labelNameGroup.TabIndex = 5;
@@ -104,7 +107,7 @@ namespace WinFormsDB
             // 
             // btnSaveGroup
             // 
-            this.btnSaveGroup.Location = new System.Drawing.Point(219, 116);
+            this.btnSaveGroup.Location = new System.Drawing.Point(191, 115);
             this.btnSaveGroup.Name = "btnSaveGroup";
             this.btnSaveGroup.Size = new System.Drawing.Size(152, 23);
             this.btnSaveGroup.TabIndex = 6;
@@ -166,12 +169,42 @@ namespace WinFormsDB
             this.SelectedGroup.Size = new System.Drawing.Size(0, 15);
             this.SelectedGroup.TabIndex = 12;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(386, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "New Student";
+            // 
+            // txtDataStudent
+            // 
+            this.txtDataStudent.Location = new System.Drawing.Point(386, 63);
+            this.txtDataStudent.Name = "txtDataStudent";
+            this.txtDataStudent.Size = new System.Drawing.Size(149, 23);
+            this.txtDataStudent.TabIndex = 14;
+            this.txtDataStudent.TextChanged += new System.EventHandler(this.txtDataStudent_TextChanged);
+            // 
+            // btnSaveStudentInGroup
+            // 
+            this.btnSaveStudentInGroup.Location = new System.Drawing.Point(386, 115);
+            this.btnSaveStudentInGroup.Name = "btnSaveStudentInGroup";
+            this.btnSaveStudentInGroup.Size = new System.Drawing.Size(149, 23);
+            this.btnSaveStudentInGroup.TabIndex = 15;
+            this.btnSaveStudentInGroup.Text = "Save Student";
+            this.btnSaveStudentInGroup.UseVisualStyleBackColor = true;
+            this.btnSaveStudentInGroup.Click += new System.EventHandler(this.btnSaveStudentInGroup_Click);
+            // 
             // FormAcademy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAddStudent;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaveStudentInGroup);
+            this.Controls.Add(this.txtDataStudent);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.SelectedGroup);
             this.Controls.Add(this.NameSelectedGroup);
             this.Controls.Add(this.labelStudentsInGroup);
@@ -208,6 +241,9 @@ namespace WinFormsDB
         private System.Windows.Forms.Label labelStudentsInGroup;
         private System.Windows.Forms.Label NameSelectedGroup;
         private System.Windows.Forms.Label SelectedGroup;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDataStudent;
+        private System.Windows.Forms.Button btnSaveStudentInGroup;
     }
 }
 

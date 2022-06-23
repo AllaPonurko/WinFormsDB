@@ -19,7 +19,7 @@ namespace WinFormsDB.Entities
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        public Guid GroupId { get; set; }
+        //public Guid GroupId { get; set; }
         [Required]
         public string Email { get; set; }
         public override string ToString()

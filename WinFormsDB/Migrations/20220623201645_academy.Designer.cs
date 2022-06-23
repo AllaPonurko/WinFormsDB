@@ -10,8 +10,8 @@ using WinFormsDB.DbContextAplication;
 namespace WinFormsDB.Migrations
 {
     [DbContext(typeof(DbContextAcademy))]
-    [Migration("20220622211346_Academy")]
-    partial class Academy
+    [Migration("20220623201645_academy")]
+    partial class academy
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,7 +50,7 @@ namespace WinFormsDB.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("GroupId")
+                    b.Property<Guid?>("GroupId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LastName")
@@ -68,9 +68,7 @@ namespace WinFormsDB.Migrations
                 {
                     b.HasOne("WinFormsDB.Entities.Group", null)
                         .WithMany("Students")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId");
                 });
 
             modelBuilder.Entity("WinFormsDB.Entities.Group", b =>

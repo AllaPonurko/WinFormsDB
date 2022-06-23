@@ -36,9 +36,6 @@ namespace WinFormsDB.Views
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.listBoxStudents = new System.Windows.Forms.ListBox();
-            this.labelListStudents = new System.Windows.Forms.Label();
             this.labelGroup = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -75,6 +72,7 @@ namespace WinFormsDB.Views
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 23);
             this.txtFirstName.TabIndex = 3;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtLastName
             // 
@@ -82,6 +80,7 @@ namespace WinFormsDB.Views
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 23);
             this.txtLastName.TabIndex = 4;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // txtEmail
             // 
@@ -89,6 +88,7 @@ namespace WinFormsDB.Views
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 23);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // btnSave
             // 
@@ -98,35 +98,6 @@ namespace WinFormsDB.Views
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save Student";
             this.btnSave.UseVisualStyleBackColor = true;
-           
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(31, 212);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(192, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // listBoxStudents
-            // 
-            this.listBoxStudents.FormattingEnabled = true;
-            this.listBoxStudents.ItemHeight = 15;
-            this.listBoxStudents.Location = new System.Drawing.Point(568, 68);
-            this.listBoxStudents.Name = "listBoxStudents";
-            this.listBoxStudents.Size = new System.Drawing.Size(120, 199);
-            this.listBoxStudents.TabIndex = 8;
-            // 
-            // labelListStudents
-            // 
-            this.labelListStudents.AutoSize = true;
-            this.labelListStudents.Location = new System.Drawing.Point(568, 25);
-            this.labelListStudents.Name = "labelListStudents";
-            this.labelListStudents.Size = new System.Drawing.Size(74, 15);
-            this.labelListStudents.TabIndex = 9;
-            this.labelListStudents.Text = "List Students";
             // 
             // labelGroup
             // 
@@ -140,11 +111,8 @@ namespace WinFormsDB.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(429, 274);
             this.Controls.Add(this.labelGroup);
-            this.Controls.Add(this.labelListStudents);
-            this.Controls.Add(this.listBoxStudents);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
@@ -153,7 +121,7 @@ namespace WinFormsDB.Views
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelFirstName);
             this.Name = "FormStudent";
-            this.Text = "FormStudent";
+            this.Text = "New Student";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,9 +136,6 @@ namespace WinFormsDB.Views
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ListBox listBoxStudents;
-        private System.Windows.Forms.Label labelListStudents;
         private System.Windows.Forms.Label labelGroup;
     }
 }
